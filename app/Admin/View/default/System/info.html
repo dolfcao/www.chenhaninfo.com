@@ -1,0 +1,310 @@
+<extend name="Public/frame" />
+<block name="content-box">
+
+    <div style="padding:5px;">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="icon-bar-chart"></span> {$Think.lang.server_info}
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td class="text-right" style="width:12em"><b>{$Think.lang.version}</b></td>
+                            <td><code>v{$Think.const.APP_VERSION}</code></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.os}</td>
+                            <td><code>{$Think.const.PHP_OS}</code></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.php_version}</td>
+                            <td><code>{$Think.const.PHP_VERSION}</code></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">upload_max_filesize</td>
+                            <td><code><?php echo ini_get ( 'upload_max_filesize' ); ?></code></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">post_max_size</td>
+                            <td><code><?php echo ini_get ( 'post_max_size' ); ?></code></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="icon-cog"></span> {$Think.lang.upload_setting}
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td class="text-right" style="width:12em">{$Think.lang.IMAGE_MAX_SIZE}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.IMAGE_MAX_SIZE|byte_format}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.IMAGE_ALLOW_EXT}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.IMAGE_ALLOW_EXT|join=', ',###}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.SCRAWL_MAX_SIZE}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.SCRAWL_MAX_SIZE|byte_format}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.CATCHER_MAX_SIZE}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.CATCHER_MAX_SIZE|byte_format}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.CATCHER_ALLOW_EXT}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.CATCHER_ALLOW_EXT|join=', ',###}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.VIDEO_MAX_SIZE}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.VIDEO_MAX_SIZE|byte_format}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.VIDEO_ALLOW_EXT}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.VIDEO_ALLOW_EXT|join=', ',###}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.FILE_MAX_SIZE}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.FILE_MAX_SIZE|byte_format}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.FILE_ALLOW_EXT}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.FILE_ALLOW_EXT|join=', ',###}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.IMAGE_LIST_EXT}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.IMAGE_LIST_EXT|join=', ',###}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">{$Think.lang.FILE_LIST_EXT}</td>
+                            <td>{$Think.config.ADMIN_UPLOAD.FILE_LIST_EXT|join=', ',###}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <if condition="has_module('ModMemberUpload')">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="icon-cog"></span> {$Think.lang.user}{$Think.lang.upload_setting}
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td class="text-right" style="width:12em">{$Think.lang.IMAGE_MAX_SIZE}</td>
+                                <td>{$Think.config.USER_UPLOAD.IMAGE_MAX_SIZE|byte_format}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.IMAGE_ALLOW_EXT}</td>
+                                <td>{$Think.config.USER_UPLOAD.IMAGE_ALLOW_EXT|join=', ',###}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.SCRAWL_MAX_SIZE}</td>
+                                <td>{$Think.config.USER_UPLOAD.SCRAWL_MAX_SIZE|byte_format}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.CATCHER_MAX_SIZE}</td>
+                                <td>{$Think.config.USER_UPLOAD.CATCHER_MAX_SIZE|byte_format}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.CATCHER_ALLOW_EXT}</td>
+                                <td>{$Think.config.USER_UPLOAD.CATCHER_ALLOW_EXT|join=', ',###}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.VIDEO_MAX_SIZE}</td>
+                                <td>{$Think.config.USER_UPLOAD.VIDEO_MAX_SIZE|byte_format}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.VIDEO_ALLOW_EXT}</td>
+                                <td>{$Think.config.USER_UPLOAD.VIDEO_ALLOW_EXT|join=', ',###}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.FILE_MAX_SIZE}</td>
+                                <td>{$Think.config.USER_UPLOAD.FILE_MAX_SIZE|byte_format}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.FILE_ALLOW_EXT}</td>
+                                <td>{$Think.config.USER_UPLOAD.FILE_ALLOW_EXT|join=', ',###}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.IMAGE_LIST_EXT}</td>
+                                <td>{$Think.config.USER_UPLOAD.IMAGE_LIST_EXT|join=', ',###}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{$Think.lang.FILE_LIST_EXT}</td>
+                                <td>{$Think.config.USER_UPLOAD.FILE_LIST_EXT|join=', ',###}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </if>
+
+            </div>
+            <div class="col-md-6">
+
+
+                <div class="panel <if condition="$system_safe">panel-default<else />panel-danger</if>">
+                    <div class="panel-heading">
+                        <span class="icon-dashboard"></span> {$Think.lang.system_safety}
+                    </div>
+                    <div class="panel-body">
+                        <if condition="$system_safe">
+                            <p class="text-success"><span class="glyphicon glyphicon-ok-sign"></span> {$Think.lang.system_safe}</p>
+                        </if>
+
+                        <if condition="$danger_file_admin">
+                            <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.danger_file_admin}</p>
+                        </if>
+                        <if condition="$weak_setting_db_password">
+                            <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.weak_setting_db_password}</p>
+                        </if>
+                        <if condition="$weak_setting_admin_password">
+                            <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.weak_setting_admin_password}</p>
+                        </if>
+                        <if condition="$danger_mode_debug">
+                            <p class="text-warning"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.danger_mode_debug}</p>
+                        </if>
+                        <if condition="$weak_setting_admin_last_change_password">
+                            <p class="text-warning"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.weak_setting_admin_last_change_password}</p>
+                        </if>
+                        <if condition="$danger_file_install">
+                            <p class="text-warning"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.danger_file_install}</p>
+                        </if>
+                        <if condition="$danger_file_publish">
+                            <p class="text-warning"><span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.danger_file_publish}</p>
+                        </if>
+
+                        <!--[if lte IE 8]>
+                            <p class="text-warning">
+                                <span class="glyphicon glyphicon-info-sign"></span> {$Think.lang.browser_need_upgrade}
+                                <a href="__ROOT__/asserts/html/browser_upgrade_notice.html" target="_blank">{$Think.lang.view}</a>
+                            </p>
+                        <![endif]-->
+
+                    </div>
+                </div>
+
+
+                <?php
+                if(file_exists($file='./app/Common/Custom/admin_system_info_panel.php')){
+                    include $file;
+                }
+                ?>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="icon-desktop"></span> {$Think.lang.maintain}
+                    </div>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <if condition="access_permit('maintain')">
+                                        <a href="#" data-href="{:U('System/maintain?action=clear_cache')}" class="btn btn-sm btn-default command-ajax-request">{$Think.lang.clear_cache}</a>
+                                        <a href="{:U('System/maintain?action=download_log')}" target="_blank" class="btn btn-sm btn-default">{$Think.lang.download_log}</a>
+                                        <a href="{:U('System/maintain?action=view_log')}" target="_blank" class="btn btn-sm btn-default">{$Think.lang.log_view}</a>
+                                        <a href="#" data-href="{:U('System/maintain?action=clear_log')}" class="btn btn-sm btn-default command-ajax-request">{$Think.lang.clear_log}</a>
+                                        <a href="#" data-href="{:U('Helper/reportlog')}" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-default command-ajax-request" title="{$Think.lang.log_report_desc}">{$Think.lang.log_report}</a>
+                                    </if>
+                                    <if condition="APP_DEV_MODE">
+                                        <a href="#" data-href="{:U('Helper/debug_off')}" class="btn btn-sm btn-default command-ajax-request">{$Think.lang.debug_off}</a>
+                                    <else />
+                                        <a href="#" data-href="{:U('Helper/debug_on')}" class="btn btn-sm btn-default command-ajax-request">{$Think.lang.debug_on}</a>
+                                    </if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {$Think.lang.log_size} : {$log_size|byte_format}
+                                </td>
+                                <td>
+                                    {$Think.lang.log_file_cnt} : {$log_file_cnt}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="icon-tasks"></span> {$Think.lang.cron}
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>{$Think.lang.name}</th>
+                            <th>{$Think.lang.next_execute}</th>
+                            <th>{$Think.lang.cron_interval}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="crons" item="v">
+                            <tr>
+                                <td>{$v.0}</td>
+                                <td>{$v.2}</td>
+                                <td>{$v.1}</td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </div>
+
+                <if condition="APP_DEV_MODE && preg_match('/php-project-\\d+\\.com/',HTTP_HOST)">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="icon-sitemap"></span> Mod&amp;CMS
+                        </div>
+
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <a href="#" data-href="{:U('Helper/packsrc')}" class="btn btn-sm btn-default command-ajax-request">Compress JS&amp;CSS</a>
+                                    <a href="#" id="btn-module-cms-list" data-url="{:U('Helper/module_cms_list')}" class="btn btn-sm btn-default">Git Reload</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Framework：
+                                </td>
+                                <td id="box-framework">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Mod：
+                                </td>
+                                <td id="box-module-list">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Cms：
+                                </td>
+                                <td id="box-cms-list">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Ext：
+                                </td>
+                                <td id="box-extends-list">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </if>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+</block>

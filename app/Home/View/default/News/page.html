@@ -1,0 +1,57 @@
+<extend name="Public/frame"/>
+<block name="page_body">
+
+
+    <include file="Public/header" />
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+
+                <div class="box-page-list">
+                    <h1>
+                        新闻动态
+                    </h1>
+                    <div class="main">
+                        <foreach name="data_news" item="v">
+                            <div class="item">
+                                <div class="cover">
+                                    <a href="{:U('/News/'.$v['id'])}"><img src="__ROOT__/{$v.cover}" /></a>
+                                </div>
+                                <div class="title">
+                                    <a href="{:U('/News/'.$v['id'])}">{$v.title|htmlspecialchars}</a>
+                                </div>
+                                <div class="summary">
+                                    {$v.description}
+                                    <a href="{:U('/News/'.$v['id'])}">[查看全文]</a>
+                                </div>
+                            </div>
+                        </foreach>
+                    </div>
+                    <div class="page-bar">
+                        {$data_page}
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4">
+
+                <include file="Public/news" />
+
+                <include file="Public/qr" />
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <include file="Public/footer" />
+
+
+</block>

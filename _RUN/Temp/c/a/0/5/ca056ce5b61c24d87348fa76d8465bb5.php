@@ -1,0 +1,3 @@
+<?php
+//000000003600a:4:{i:0;a:5:{s:2:"id";s:1:"1";s:3:"url";s:20:"http://www.tecmz.com";s:4:"name";s:5:"TecMZ";s:4:"logo";s:11:"data/image/";s:4:"type";s:1:"2";}i:1;a:5:{s:2:"id";s:1:"2";s:3:"url";s:18:"http://dazhihu.com";s:4:"name";s:9:"大知乎";s:4:"logo";s:11:"data/image/";s:4:"type";s:1:"2";}i:2;a:5:{s:2:"id";s:1:"4";s:3:"url";s:24:"http://www.eamonning.com";s:4:"name";s:12:"清泉逐流";s:4:"logo";s:11:"data/image/";s:4:"type";s:1:"2";}i:3;a:5:{s:2:"id";s:1:"5";s:3:"url";s:18:"http://kkdiary.com";s:4:"name";s:12:"可可日记";s:4:"logo";s:11:"data/image/";s:4:"type";s:1:"2";}}
+?>

@@ -1,0 +1,44 @@
+<extend name="Public/frame"/>
+<block name="page_body">
+
+
+    <include file="Public/header"/>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+
+                <div class="box-page-main">
+                    <h1>
+                        {$data_news.title}
+                    </h1>
+                    <div class="attr">
+                        发布时间：{$data_news.posttime|date='Y-m-d H:i',###}
+                    </div>
+                    <div class="main">
+                        {$data_news.content}
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4">
+
+                <include file="Public/news"/>
+
+                <include file="Public/qr"/>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <include file="Public/footer"/>
+
+
+</block>

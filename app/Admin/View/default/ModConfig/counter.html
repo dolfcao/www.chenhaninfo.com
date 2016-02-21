@@ -1,0 +1,12 @@
+<extend name="Public/frame" />
+<block name="content-box">
+
+    <form class="form-horizontal tpx-ajaxsubmit" role="form" action="{:U(CONTROLLER_NAME.'/'.ACTION_NAME)}" method="post">
+
+        <input_bigtext id="code_counter" title="访问统计" desc="" required="1" readonly="0">{$data_code_counter}</input_bigtext>
+
+        <input_submit></input_submit>
+
+    </form>
+
+</block>

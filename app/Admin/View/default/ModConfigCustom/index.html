@@ -1,0 +1,23 @@
+<extend name="Public/frame" />
+<block name="content-box">
+
+    <form class="form-horizontal tpx-ajaxsubmit" role="form" action="{:U(CONTROLLER_NAME.'/'.ACTION_NAME)}" method="post">
+
+        <input_richtext id="home_about" title="首页公司介绍" desc="" required="1" readonly="0">{$data_home_about}</input_richtext>
+        <input_imagefile id="image_logo" title="Logo" desc="尺寸150x50，PNG格式" extension="png">{$data_image_logo}</input_imagefile>
+        <input_imagefile id="image_qr" title="二维码" desc="" extension="png">{$data_image_qr}</input_imagefile>
+        <?php
+        $themes = array(
+            'red' => '红色系',
+            'blue' => '蓝色系',
+            'green' => '绿色系',
+            'orange' => '橙色系',
+        );
+        $current = tpx_config_get('theme_color','red');
+        ?>
+        <input_selecttext id="theme_color" title="色调" option="$themes" current="$current"></input_selecttext>
+        <input_submit></input_submit>
+
+    </form>
+
+</block>
