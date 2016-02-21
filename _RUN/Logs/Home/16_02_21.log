@@ -1,0 +1,15 @@
+[ 2016-02-21T22:08:16+08:00 ] 175.10.166.163 /contact
+NOTIC: [8] Undefined index: limit /home/wwwroot/www.chenhaninfo.com/app/Common/Service/SinglePageService.class.php 第 15 行.
+
+[ 2016-02-21T22:08:17+08:00 ] 175.10.166.163 /watcher/js
+ERR: Url=http://www.chenhaninfo.com/contact, File=http://www.chenhaninfo.com/contact, Line=117, Error=Uncaught ReferenceError: BMap is not defined, Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36
+
+[ 2016-02-21T22:10:42+08:00 ] 175.10.166.163 /contact
+NOTIC: [8] Undefined index: limit /home/wwwroot/www.chenhaninfo.com/app/Common/Service/SinglePageService.class.php 第 15 行.
+
+[ 2016-02-21T22:11:09+08:00 ] 175.10.166.163 /watcher/js
+ERR: Url=http://www.chenhaninfo.com/chenhaninfo.php?s=/cms_single_page/cmshandle/action/edit/id/2/page/1, File=http://www.chenhaninfo.com/chenhaninfo.php?s=/cms_single_page/cmshandle/action/edit/id/2/page/1, Line=205, Error=Uncaught ReferenceError: BMap is not defined, Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36
+
+[ 2016-02-21T22:12:26+08:00 ] 175.10.166.163 /contact
+NOTIC: [8] Undefined index: limit /home/wwwroot/www.chenhaninfo.com/app/Common/Service/SinglePageService.class.php 第 15 行.
+

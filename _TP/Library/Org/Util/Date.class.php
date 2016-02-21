@@ -295,7 +295,7 @@ class Date {
      * @param mixed $precision 返回的精度
      * @return string
      */
-    public function timeDiff( $time ,$precision=false) {
+    public function timeDiff( $time ,$precision=false) {;
         if(!is_numeric($precision) && !is_bool($precision)) {
             static $_diff = array('y'=>'年','M'=>'个月','d'=>'天','w'=>'周','s'=>'秒','h'=>'小时','m'=>'分钟');
             return ceil($this->dateDiff($time,$precision)).$_diff[$precision].'前';

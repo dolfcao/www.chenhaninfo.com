@@ -1,0 +1,3 @@
+<?php
+//000000000000s:1137:"<p><img src="data/image/201504/18/71949_nMQP_7254.png" title="Screen Shot 2015-04-18 at 03.58.38.png" alt="Screen Shot 2015-04-18 at 03.58.38.png" width="283" height="210" style="width: 283px; height: 210px; float: left;"/></p><p style="white-space: normal; text-indent: 2em;">湖南宸瀚信息科技有限公司是一家面向全球提供IT解决方案与服务的公司，致力于通过创新的信息化技术来推动社会的发展与变革，为个人创造新的生活方式，为社会创造价值。</p><p style="white-space: normal; text-indent: 2em;">湖南宸瀚信息科技有限公司以软件技术为核心，提供行业解决方案和产品工程解决方案以及相关软件产品、平台及服务。</p><p style="white-space: normal; text-indent: 2em;">面向行业客户，湖南宸瀚信息科技有限公司提供满足行业智慧发展与管理的解决方案、产品及服务，涵盖领域包括：电信、能源、金融、政府、制造业、商贸流通业、医疗卫生、教育与文化、交通、移动互联网、传媒、环保等。</p><p><br style="text-indent: 2em; text-align: left;"/></p>";
+?>

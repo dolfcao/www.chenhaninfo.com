@@ -1,0 +1,4 @@
+<?php
+define ('APP_VERSION', '1.1.2');
+define('APP_NAME', 'Co.MZ企业系统');
+define ('STATIC_RES_HASH', '20150830_122346');

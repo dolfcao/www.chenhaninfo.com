@@ -163,6 +163,8 @@ define(['jquery'], function ($) {
                                     if (data.url) {
                                         if ('[reload]' == data.url) {
                                             window.location.reload();
+                                        } else if ('[reload-root]' == data.url) {
+                                            $.getRootWindow().location.reload();
                                         } else {
                                             $.redirect(data.url);
                                         }
@@ -196,6 +198,8 @@ define(['jquery'], function ($) {
                                         if (data.url) {
                                             if ('[reload]' == data.url) {
                                                 window.location.reload();
+                                            } else if ('[reload-root]' == data.url) {
+                                                $.getRootWindow().location.reload();
                                             } else {
                                                 $.redirect(data.url);
                                             }
@@ -212,6 +216,8 @@ define(['jquery'], function ($) {
                             if (data.url) {
                                 if ('[reload]' == data.url) {
                                     window.location.reload();
+                                } else if ('[reload-root]' == data.url) {
+                                    $.getRootWindow().location.reload();
                                 } else {
                                     $.redirect(data.url);
                                 }
@@ -228,6 +234,34 @@ define(['jquery'], function ($) {
             } else {
                 alert('ERROR: Response Data Empty!');
             }
+        },
+        urlBuild: function (controller, action, params) {
+            controller = controller ? controller : 'index';
+            action = action ? action : 'index';
+            params = params ? params : {};
+
+            var url = [];
+
+            url.push(TPX.PATH_ROOT);
+            url.push('/');
+
+            if (!TPX.REWRITE) {
+                url.push('?s=/');
+            }
+
+            url.push(controller);
+            url.push('/');
+            url.push(action);
+            url.push('/');
+
+            for (var v in params) {
+                url.push($.urlencode(v));
+                url.push('/');
+                url.push($.urlencode(params[v]));
+                url.push('/');
+            }
+
+            return url.join('');
         }
     });
 

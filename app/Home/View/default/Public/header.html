@@ -19,7 +19,7 @@
                         <li <if condition="CONTROLLER_NAME eq 'Index'">class="active"</if>><a href="__ROOT__/">公司首页</a></li>
                         <li <if condition="CONTROLLER_NAME eq 'Product'">class="active"</if>><a href="{:U('/Product')}">产品中心</a></li>
                         <li <if condition="CONTROLLER_NAME eq 'News'">class="active"</if>><a href="{:U('/News')}">新闻动态</a></li>
-                        <?php foreach(D('SinglePage','Service')->all() as $v){ ?>
+                        <?php foreach(D('SinglePage','Service')->all(3600,array('where'=>array('show_in_nav'=>1))) as $v){ ?>
                         <li <if condition="CONTROLLER_NAME eq ucwords($v['url'])">class="active"</if>><a href="{:U('/'.ucwords($v['url']))}">{$v.title}</a></li>
                         <?php } ?>
                     </ul>

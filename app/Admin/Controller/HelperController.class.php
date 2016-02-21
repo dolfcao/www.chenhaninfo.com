@@ -52,6 +52,8 @@ class HelperController extends Controller
         'app/Admin/View/default/System/',
         'app/Admin/View/default/index.html',
 
+        'app/Admin/Widget/',
+
         'app/Admin/Common/',
 
         'app/Admin/Home/',
@@ -119,6 +121,17 @@ class HelperController extends Controller
             'app/Admin/Data/ModChinaDistrict/',
             'app/Common/Service/ChinaDistrictService.class.php',
         ),
+        'WX' => array(
+            'app/Admin/Controller/CmsWxAccountController.class.php',
+            'app/Admin/Controller/ModWxModuleController.class.php',
+            'app/Admin/View/default/ModWxModule/',
+            'app/Admin/View/default/CmsWxAccount/',
+            'app/Common/Service/WechatService.class.php',
+            'app/Common/ModWxModule/',
+            'app/Common/Common/wx.php',
+            'app/WxModule/',
+            'app/Home/Controller/WxController.class.php',
+        )
     );
     private static $cmses = array(
         'Guestbook' => array(
@@ -345,6 +358,12 @@ class HelperController extends Controller
                             $this->_pack_js($f ['pathname'], $pack_path);
                         }
                         $returns[] = $pack_path;
+                    }
+                } else if (substr($f ['filename'], -3) == '.js' && substr($f ['filename'], -7) != '.src.js') {
+                    // 不存在src文件
+                    if (!file_exists($src_path = substr($f ['pathname'], 0, -3) . '.src.js')) {
+                        @copy($f ['pathname'], $src_path);
+                        $returns[] = "copy $f[pathname] -> $src_path";
                     }
                 }
             }

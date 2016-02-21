@@ -16,6 +16,11 @@ $tables = $db->getTables();
 
 $msgs = array();
 
+if (file_exists($file = './app/Common/Upgrade/custom.php')) {
+    include $file;
+}
+
+
 $table_name = $db_prefix . "cms_tag_pool";
 if (!in_array($table_name, $tables)) {
     $db->execute("

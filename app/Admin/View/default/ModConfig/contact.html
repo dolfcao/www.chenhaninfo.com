@@ -3,13 +3,76 @@
 
     <form class="form-horizontal tpx-ajaxsubmit" role="form" action="{:U(CONTROLLER_NAME.'/'.ACTION_NAME)}" method="post">
 
-        <input_text id="contact_address" title="地址" desc="" required="1" readonly="0">{$data_contact_address}</input_text>
-        <input_text id="contact_email" title="邮箱" desc="" required="1" readonly="0">{$data_contact_email}</input_text>
-        <input_text id="contact_website" title="网址" desc="" required="1" readonly="0">{$data_contact_website}</input_text>
-        <input_text id="contact_tel" title="电话" desc="" required="1" readonly="0">{$data_contact_tel}</input_text>
-        <input_text id="contact_qq" title="QQ" desc="" required="1" readonly="0">{$data_contact_qq}</input_text>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">地址</label>
+            <div class="col-sm-9">
+                <input name="contact_address"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$contact_address|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
 
-        <input_submit></input_submit>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">邮箱</label>
+            <div class="col-sm-9">
+                <input name="contact_email"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$contact_email|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">网址</label>
+            <div class="col-sm-9">
+                <input name="contact_website"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$contact_website|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">电话</label>
+            <div class="col-sm-9">
+                <input name="contact_tel"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$contact_tel|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">QQ</label>
+            <div class="col-sm-9">
+                <input name="contact_qq"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$contact_qq|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">{$Think.lang.submit}</button>
+            </div>
+        </div>
 
     </form>
 

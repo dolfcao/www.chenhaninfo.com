@@ -1,4 +1,4 @@
-require(['jquery', 'jquery.extern'], function () {
+require(['jquery', 'jquery.extern', 'bootstrap'], function () {
     $(function () {
         $('.box-mod-category .item img').each(function (i, o) {
             $(o).height($(o).width());
@@ -6,6 +6,6 @@ require(['jquery', 'jquery.extern'], function () {
         $('.box-product-list .item img').each(function (i, o) {
             $(o).height($(o).width());
         });
-        
+
     });
 });

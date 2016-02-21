@@ -821,13 +821,13 @@ function get_admin_controller($type = 'cms|mod|exportable|cat')
  * @param array $node
  * @param number $pid
  */
-function node_merge(&$node, $pid = 0)
+function node_merge(&$node, $pid = 0, $id_name = 'id', $pid_name = 'pid', $child_name = '_child')
 {
     $arr = array();
 
     foreach ($node as $v) {
-        if ($v ['pid'] == $pid) {
-            $v ['_child'] = node_merge($node, $v ['id']);
+        if ($v [$pid_name] == $pid) {
+            $v [$child_name] = node_merge($node, $v [$id_name], $id_name, $pid_name, $child_name);
             $arr [] = $v;
         }
     }
@@ -895,4 +895,78 @@ function member_has_authority($code, $uid = null)
 
     $one = D('MemberAuthority')->where(array('uid' => $uid, 'code' => $code))->find();
     return !empty($one);
+}
+
+/**
+ * 设置全局配置到文件
+ *
+ * @param $key
+ * @param $value
+ */
+function tpx_sys_config_set($key, $value)
+{
+    $file = './_CFG/config.php';
+    $cfg = array();
+    if (file_exists($file)) {
+        $cfg = (include $file);
+    }
+    $item = explode('.', $key);
+    switch (count($item)) {
+        case 1:
+            $cfg[$item[0]] = $value;
+            break;
+        case 1:
+            $cfg[$item[0]][$item[1]] = $value;
+            break;
+    }
+    file_put_contents('./_CFG/config.php', "<?php\nreturn " . var_export($cfg, true) . ";");
+}
+
+/**
+ * 获取全局配置
+ *
+ * @param $key
+ * @return null
+ */
+function tpx_sys_config_get($key)
+{
+    $file = './_CFG/config.php';
+    $cfg = array();
+    if (file_exists($file)) {
+        $cfg = (include $file);
+    }
+    return isset($cfg[$key]) ? $cfg[$key] : null;
+}
+
+/**
+ * 一些方便模板调用的函数
+ */
+function t_date($time)
+{
+    return date('Y-m-d', $time);
+}
+
+function t_datetime($time)
+{
+    return date('Y-m-d H:i:s', $time);
+}
+
+function t_remove_html($content)
+{
+    return remove_html($content);
+}
+
+function t_zh_cut($content, $length = 100)
+{
+    return String::msubstr($content, 0, $length);
+}
+
+function t_html($content)
+{
+    return htmlspecialchars($content);
+}
+
+function t_text2html($content)
+{
+    return text2html($content);
 }

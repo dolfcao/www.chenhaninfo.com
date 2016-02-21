@@ -276,7 +276,10 @@ class MemberService
         D('MemberProfile')->add($data);
 
         if (has_module('MemberUpload')) {
-            D('MemberUploadSpace')->add(array('uid' => $uid, 'space' => 0));
+            D('MemberUploadSpace')->add(array(
+                    'uid' => $uid,
+                    'space' => tpx_config_get('member_upload_space', 0))
+            );
         }
 
         if (has_cms('MemberExtraInfo')) {

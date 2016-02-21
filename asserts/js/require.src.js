@@ -2089,9 +2089,10 @@ var requirejs, require, define;
 // 一些依赖关系放在这里
 require.config({
     paths: {
+        ///// 开始 ///// 这部分和require.src.js依赖部分保持一致
         'jquery': 'jquery-1.11.3',
         'bootstrap': '../bootstrap/js/bootstrap',
-        'lhgdialog.lang': '../lhgdialog/lhgdialog-' + TPX.LANG,
+        'lhgdialog.lang': '../lhgdialog/lhgdialog-zh-cn',
         'lhgdialog.base': '../lhgdialog/lhgdialog',
 
         'ueditor.config': '../ueditor1_4_3/ueditor.config',
@@ -2104,9 +2105,31 @@ require.config({
         'jquery.ui': '../jquery-ui-1.11.2/jquery-ui',
         'jquery.ui.timepicker': '../jquery-ui-1.11.2/jquery-ui-timepicker-addon',
         'hightlight': '../hightlight/hightlight',
-        'bootstrap': '../bootstrap/js/bootstrap'
+
+        'marked': '../mdeditor/lib/marked.min',
+        'prettify': '../mdeditor/lib/prettify.min',
+        'raphael': '../mdeditor/lib/raphael.min',
+        'underscore': '../mdeditor/lib/underscore.min',
+        'flowchart': '../mdeditor/lib/flowchart.min',
+        'jqueryflowchart': '../mdeditor/lib/jquery.flowchart.min',
+        'sequenceDiagram': '../mdeditor/lib/sequence-diagram.min',
+        'codemirror': '../mdeditor/lib/codemirror',
+        'katex': '../mdeditor/lib/katex.min',
+        'editormd': '../mdeditor/editormd.amd',
+
+        'jquery.lightbox': '../lightbox/jquery.lightbox',
+
+        'angular': '../angular/angular',
+        'angular-route': '../angular/angular-route',
+        'angular-loader': '../angular/angular-loader',
+        'angular-scenario': '../angular/angular-scenario',
+        'angular-ui-router': '../angular/angular-ui-router',
+        'angular-ui-tree': '../angular/angular-ui-tree'
+        ///// 结束 ///// 这部分和require.src.js依赖部分保持一致
     },
     shim: {
+        ///// 开始 ///// 这部分和require.src.js依赖部分保持一致
+        'jquery': {exports: '$'},
         'jquery.bootgrid': ['json2', 'jquery.url', 'jquery.md5'],
         'jquery.extern': ['jquery'],
         'lhgdialog.lang': ['jquery'],
@@ -2114,13 +2137,28 @@ require.config({
         'jquery.md5': ['jquery'],
         'jquery.url': ['jquery'],
         'jquery.base64': ['jquery'],
+        'jquery.storage': ['jquery'],
+        'jquery.hotkeys': ['jquery'],
         'ueditor': ['ueditor.config'],
         'user_editor': ['user_editor.config'],
         'upload_button': ['jquery'],
         'jquery.ui': ['jquery'],
         'jquery.ui.timepicker': ['jquery.ui'],
+        'url': ['jquery'],
         'jquery.category': ['jquery'],
-        'bootstrap': ['jquery']
+        'bootstrap': ['jquery'],
+        'jqueryflowchart': ['jquery', 'flowchart'],
+        'sequenceDiagram': ['raphael'],
+        'angular': {exports: 'angular'},
+        'angular-route': {exports: 'angular_route', deps: ['angular']},
+        'angular-loader': {exports: 'angular_loader', deps: ['angular']},
+        'angular-scenario': {exports: 'angular_scenario', deps: ['angular']},
+        'angular-ui-router': {exports: 'angular_ui_router', deps: ['angular']},
+        'angular-ui-tree': {exports: 'angular_ui_tree', deps: ['angular']},
+        'jquery.superslide2': ['jquery'],
+        'jquery.lightbox': ['jquery'],
+        'jquery.intro':{exports: 'jquery_intro', deps:['jquery']}
+        ///// 结束 ///// 这部分和require.src.js依赖部分保持一致
     },
     waitSeconds: 0
 });

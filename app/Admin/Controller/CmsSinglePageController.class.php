@@ -46,6 +46,13 @@ class CmsSinglePageController extends CmsController
             'default' => '',
             'rules' => 'searchable|required'
         ),
+        'show_in_nav' => array(
+            'title' => '导航显示',
+            'description' => '',
+            'type' => 'switch',
+            'default' => '1',
+            'rules' => ''
+        ),
         'title' => array(
             'title' => '页面标题',
             'description' => '',

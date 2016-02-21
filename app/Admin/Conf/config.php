@@ -7,5 +7,6 @@ return array(
     // 'NOT_AUTH_MODULE' => 'Login',
     // 'RBAC_DB_DSN' => '',
     'ADMIN_ROOT_ID' => 1,
-    'TAGLIB_BUILD_IN' => 'cx,tpx'
+    'TAGLIB_BUILD_IN' => 'cx',
+    'URL_MODEL' => 3,
 );

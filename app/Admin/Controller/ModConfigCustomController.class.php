@@ -24,7 +24,6 @@ class ModConfigCustomController extends ModController
             'theme_color'
         );
         if (IS_POST) {
-            $data = array();
             foreach ($keys as &$k) {
                 tpx_config($k, I('post.' . $k, '', 'trim'));
             }
@@ -39,11 +38,10 @@ class ModConfigCustomController extends ModController
         }
 
         foreach ($keys as &$k) {
-            $kk = "data_$k";
-            $this->$kk = tpx_config($k);
+            $this->$k = tpx_config_get($k);
         }
-        $this->data_image_logo = tpx_config_get('image_logo', 'asserts/res/image/logo.png');
-        $this->data_image_qr = tpx_config_get('image_qr', 'asserts/res/image/qr.jpg');
+        $this->image_logo = tpx_config_get('image_logo', 'asserts/res/image/logo.png');
+        $this->image_qr = tpx_config_get('image_qr', 'asserts/res/image/qr.jpg');
 
         $this->display();
     }

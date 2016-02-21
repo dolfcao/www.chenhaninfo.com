@@ -294,13 +294,16 @@ abstract class CmsController extends AdminController
             }
 
             // 字段预处理
+            $_cms_fields = &$this->cms_fields;
             foreach ($this->cms_fields_list as $k => &$v) {
-                switch ($this->cms_fields[$v]['type']) {
-                    case 'baidu_map':
-                        unset($this->cms_fields_list[$k]);
-                        $this->cms_fields_list[] = $v . '_lng';
-                        $this->cms_fields_list[] = $v . '_lat';
-                        break;
+                if (isset($_cms_fields[$v])) {
+                    switch ($_cms_fields[$v]['type']) {
+                        case 'baidu_map':
+                            unset($this->cms_fields_list[$k]);
+                            $this->cms_fields_list[] = $v . '_lng';
+                            $this->cms_fields_list[] = $v . '_lat';
+                            break;
+                    }
                 }
             }
 
@@ -563,10 +566,15 @@ abstract class CmsController extends AdminController
                 if (empty ($this->cms_fields_add)) {
                     $this->cms_fields_add = array_keys($this->cms_fields);
                 }
+
                 foreach ($this->cms_fields as $k => $f) {
                     $rules = explode('|', $f ['rules']);
                     if (in_array('required', $rules) && !in_array($k, $this->cms_fields_add)) {
                         $this->cms_fields_add [] = $k;
+                    }
+                    if (in_array('readonly', $rules) && in_array($k, $this->cms_fields_add)) {
+                        $keys = array_keys($this->cms_fields_add, $k);
+                        unset($this->cms_fields_add[$keys[0]]);
                     }
                 }
 
@@ -725,6 +733,7 @@ abstract class CmsController extends AdminController
                             }
                         }
                     }
+
                     // 很可能会出错的地方（文件操作）
                     foreach ($this->cms_fields_add as $k) {
                         $f = $this->cms_fields [$k];
@@ -1139,7 +1148,6 @@ abstract class CmsController extends AdminController
                             }
                             break;
                         case 'commonfile' :
-                            //$addon_js [__ROOT__ . '/asserts/upload_button/upload_button' . C('TMPL_PARSE_STRING.__JS_SUFFIX__')] = true;
                             $fields [$k] ['value'] = $model_data [$k];
                             break;
                         case 'treeparent':

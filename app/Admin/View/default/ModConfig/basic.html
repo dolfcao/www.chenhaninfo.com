@@ -3,11 +3,78 @@
 
     <form class="form-horizontal tpx-ajaxsubmit" role="form" action="{:U(CONTROLLER_NAME.'/'.ACTION_NAME)}" method="post">
 
-        <input_text id="home_title" title="首页标题" desc="" required="1" readonly="0">{$data_home_title}</input_text>
-        <input_text id="home_keywords" title="首页关键词" desc="" required="1" readonly="0">{$data_home_keywords}</input_text>
-        <input_bigtext id="home_description" title="首页描述" desc="" required="1" readonly="0">{$data_home_description}</input_bigtext>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">伪静态</label>
+            <div class="col-sm-9">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="system_rewrite_enable" value="1" <if condition="$system_rewrite_enable">checked</if> /> 开启
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="system_rewrite_enable" value="0" <if condition="!$system_rewrite_enable">checked</if> /> 关闭
+                    </label>
+                </div>
+            </div>
+        </div>
 
-        <input_submit></input_submit>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">首页标题</label>
+            <div class="col-sm-9">
+                <input name="home_title"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$home_title|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">首页关键词</label>
+            <div class="col-sm-9">
+                <input name="home_keywords"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$home_keywords|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">首页描述</label>
+            <div class="col-sm-9">
+                <input name="home_description"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$home_description|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">版权信息</label>
+            <div class="col-sm-9">
+                <input name="basic_copyright"
+                       type="text"
+                       class="form-control"
+                       placeholder=""
+                       value="{$basic_copyright|t_html}"
+                        />
+                <div class="help-block"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">{$Think.lang.submit}</button>
+            </div>
+        </div>
 
     </form>
 

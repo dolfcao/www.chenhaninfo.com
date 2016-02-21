@@ -1,0 +1,15 @@
+<extend name="Public/frame" />
+<block name="content-box">
+
+    <form class="form-horizontal tpx-ajaxsubmit" role="form" action="{:U(CONTROLLER_NAME.'/'.ACTION_NAME)}" method="post">
+
+        <input_text id="home_title" title="首页标题" desc="" required="1" readonly="0">{$data_home_title|t_html}</input_text>
+        <input_text id="home_keywords" title="首页关键词" desc="" required="1" readonly="0">{$data_home_keywords|t_html}</input_text>
+        <input_bigtext id="home_description" title="首页描述" desc="" required="1" readonly="0">{$data_home_description|t_html}</input_bigtext>
+        <input_text id="basic_copyright" title="版权信息" desc="" required="1" readonly="0">{$data_basic_copyright|t_html}</input_text>
+
+        <input_submit></input_submit>
+
+    </form>
+
+</block>

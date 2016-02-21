@@ -4,13 +4,20 @@ namespace Common\Service;
 
 class SinglePageService
 {
-    public function all($cache = 3600, $options = array('limit' => 999))
+    public function all($cache = 3600, $options = array('limit' => 999, 'where' => array()))
     {
         $flag = 'single_page/all/' . md5($cache . serialize($options));
         $data = S($flag);
         if (false === $data) {
-            $data = D('CmsSinglePage')->order('id ASC')->limit($options ['limit'])->select();
+            $data = D('CmsSinglePage')
+                ->order('id ASC')
+                ->where(isset($options['where']) ? $options['where'] : array())
+                ->limit($options ['limit'])->select();
+            if (empty($data)) {
+                $data = array();
+            }
             S($flag, $data, $cache);
+
         }
         return $data;
     }
@@ -21,6 +28,9 @@ class SinglePageService
         $data = S($flag);
         if (false === $data) {
             $data = D('CmsSinglePage')->where(array('url' => $url))->find();
+            if (empty($data)) {
+                $data = array();
+            }
             S($flag, $data, $cache);
         }
         return $data;

@@ -42,7 +42,7 @@ if (C('AUTO_SEND_REPORTLOG') && function_exists('curl_init')) {
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "http://dog.tecmz.com/receive/reportlog");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $posts);
+        @curl_setopt($ch, CURLOPT_POSTFIELDS, $posts);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         $response = curl_exec($ch);

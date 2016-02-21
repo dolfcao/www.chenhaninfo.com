@@ -56,5 +56,13 @@ class CmsSlideController extends CmsController
             ),
             'rules' => 'required'
         ),
+        'url' => array(
+            'title' => '跳转链接',
+            'description' => '可选',
+            'type' => 'text',
+            'length' => 300,
+            'default' => '',
+            'rules' => ''
+        ),
     );
 }

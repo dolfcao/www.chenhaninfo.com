@@ -10,6 +10,9 @@ class ProductService
         $data = S($flag);
         if (false === $data) {
             $data = D('CmsProduct')->order('id ASC')->where(array('recommend' => 1))->limit($options ['limit'])->select();
+            if (empty($data)) {
+                $data = array();
+            }
             S($flag, $data, $cache);
         }
         return $data;
@@ -21,6 +24,9 @@ class ProductService
         $data = S($flag);
         if (false === $data) {
             $data = D('CmsProductCat')->order('sort ASC')->limit($options ['limit'])->select();
+            if (empty($data)) {
+                $data = array();
+            }
             S($flag, $data, $cache);
         }
         return $data;
@@ -32,6 +38,9 @@ class ProductService
         $data = S($flag);
         if (false === $data) {
             $data = D('CmsProductCat')->where(array('id' => $cat))->find();
+            if (empty($data)) {
+                $data = array();
+            }
             S($flag, $data, $cache);
         }
         return $data;

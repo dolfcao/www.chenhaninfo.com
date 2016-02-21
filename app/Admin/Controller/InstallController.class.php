@@ -240,11 +240,9 @@ class InstallController extends AdminController
         $admin_domain = I('post.admin_domain', 'trim');
 
         // init config.php file
-        $cfg = array();
-        $cfg['APP_SUB_DOMAIN_RULES'] = array(
+        tpx_sys_config_set('APP_SUB_DOMAIN_RULES', array(
             $admin_domain => 'Home'
-        );
-        file_put_contents('./_CFG/config.php', "<?php\nreturn " . var_export($cfg, true) . ";");
+        ));
 
         // put install lock file
         file_put_contents('./_CFG/install.lock', 'lock');
