@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        Co.MZ企业系统
+        湖南宸瀚信息科技有限公司
     </div>
 
     <table class="table" id="info-table">

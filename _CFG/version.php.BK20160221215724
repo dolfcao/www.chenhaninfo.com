@@ -1,4 +1,4 @@
 <?php
 define ('APP_VERSION', '1.1.1');
-define('APP_NAME', 'Co.MZ企业系统');
+define('APP_NAME', '湖南宸瀚信息科技有限公司');
 define ('STATIC_RES_HASH', '20150823_170542');

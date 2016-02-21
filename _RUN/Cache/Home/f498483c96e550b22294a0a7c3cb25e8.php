@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="<?php echo ($page_keywords); ?>" />
     <meta name="description" content="<?php echo ($page_description); ?>" />
-    <meta name="generator" content="Co.MZ V<?php echo (APP_VERSION); ?>" />
-    <meta name="author" content="Co.MZ TecMZ" />
+    <meta name="generator" content="宸瀚信息 V<?php echo (APP_VERSION); ?>" />
+    <meta name="author" content="宸瀚信息 TecMZ" />
     <meta name="copyright" content="2015 TecMZ Inc." />
     <link rel="icon" href="/asserts/res/fav.ico?<?php echo (STATIC_RES_HASH); ?>" type="image/x-icon" />
     <link rel="shortcut icon" href="/asserts/res/fav.ico?<?php echo (STATIC_RES_HASH); ?>" type="image/x-icon" />
@@ -131,7 +131,7 @@
             公司地址：<?php echo tpx_config_get('contact_address','[公司地址]'); ?>
         </div>
         <div class="copyright">
-            <?php echo tpx_config_get('basic_copyright','&copy; Co.MZ企业系统 2015 All Rights Reserved. <a href="http://www.tecmz.com" target="_blank">Powered by Co.MZ</a>'); ?>
+            <?php echo tpx_config_get('basic_copyright','&copy; 湖南宸瀚信息科技有限公司 2016 All Rights Reserved. <a href="http://www.tecmz.com" target="_blank">Powered by 宸瀚信息</a>'); ?>
         </div>
     </div>
 </footer>
