@@ -9,7 +9,7 @@ CREATE TABLE `<--db-prefix-->cms_partner` (
   KEY `type` (`type`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 INSERT INTO `<--db-prefix-->cms_partner` VALUES 
-('1','http://www.tecmz.com','TecMZ','data/image/','2'),
+('1','http://www.tecmz.com','ChenHan','data/image/','2'),
 ('2','http://dazhihu.com','大知乎','data/image/','2'),
 ('4','http://www.eamonning.com','清泉逐流','data/image/','2'),
 ('5','http://kkdiary.com','可可日记','data/image/','2'),
